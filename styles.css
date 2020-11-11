@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 13px;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  background-color: hsl(0, 0%, 92%);
+}
+
+#container {
+  padding: 1.5rem;
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-areas:
+    "a"
+    "b"
+    "c"
+    "d"
+    "e";
+  gap: 1.5rem;
+}
+
+@media screen and (min-width: 900px) {
+  #container {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "a a b c"
+      "d e e c";
+  }
+}
+
+.card {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.user {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  font-size: 12px;
+  opacity: 50%;
+}
+
+.propic {
+  margin-right: 1rem;
+}
+
+.propic img {
+  height: 35px;
+  border-radius: 50%;
+}
+
+.review {
+  line-height: 1.4;
+}
+
+.review .main {
+  margin-bottom: 1rem;
+}
+
+p {
+  opacity: 70%;
+}
+
+#card1 {
+  background-color: hsl(263, 55%, 52%);
+  color: #fff;
+  grid-area: a;
+  position: relative;
+  z-index: 1;
+}
+
+#quotation {
+  position: absolute;
+  top: 0;
+  height: 120px;
+  right: 100px;
+  z-index: -1;
+}
+
+#card2 {
+  background-color: hsl(217, 19%, 35%);
+  color: #fff;
+  grid-area: b;
+}
+
+#card3 {
+  grid-area: d;
+}
+
+#card4 {
+  background-color: hsl(219, 29%, 14%);
+  color: #fff;
+  grid-area: e;
+}
+
+#card5 {
+  grid-area: c;
+}
