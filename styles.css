@@ -6,16 +6,22 @@
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
 body {
+  height: 100%;
   font-size: 13px;
   font-family: "Barlow Semi Condensed", sans-serif;
-  background-color: hsl(0, 0%, 92%);
+  background-color: #edf2f8;
+  position: relative;
 }
 
 #container {
-  padding: 1.5rem;
-  max-width: 1200px;
   margin: auto;
+  max-width: 1200px;
+  padding: 1.5rem;
   display: grid;
   grid-template-areas:
     "a"
@@ -26,19 +32,12 @@ body {
   gap: 1.5rem;
 }
 
-@media screen and (min-width: 900px) {
-  #container {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-areas:
-      "a a b c"
-      "d e e c";
-  }
-}
-
-.card {
+article {
   background-color: #fff;
   padding: 2rem;
   border-radius: 10px;
+  -webkit-box-shadow: 5px 15px 25px 10px rgba(0, 0, 0, 0.12);
+  box-shadow: 5px 15px 25px 10px rgba(0, 0, 0, 0.12);
 }
 
 .user {
@@ -106,4 +105,36 @@ p {
 
 #card5 {
   grid-area: c;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and (min-width: 900px) {
+  #container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "a a b c"
+      "d e e c";
+  }
+
+  .attribution {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    margin-bottom: 0;
+  }
 }
